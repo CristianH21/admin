@@ -12240,8 +12240,6 @@ textarea.parsley-success:focus {
   position: relative;
 }
 .am-sideleft-menu > .nav-item > .nav-link.with-sub::after {
-  content: '\f489';
-  font-family: 'Ionicons';
   position: absolute;
   font-size: 18px;
   top: 6px;
