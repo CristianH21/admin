@@ -12180,11 +12180,16 @@ textarea.parsley-success:focus {
 .am-sideleft .list-group-chat .list-group-item:hover::before, .am-sideleft .list-group-chat .list-group-item:focus::before {
   opacity: 1;
 }
-
+.am-sideleft-tab{
+  background-color: #32415A;
+}
 .am-sideleft-tab .nav-item {
   width: 80px;
   height: 60px;
   border-right: 1px solid #3b4d6a;
+}
+.am-sideleft-tab .nav-item span{
+  margin-right: 20px; 
 }
 .am-sideleft-tab .nav-link {
   display: flex;
@@ -12239,14 +12244,22 @@ textarea.parsley-success:focus {
   color: #868e96;
   position: relative;
 }
-.am-sideleft-menu > .nav-item > .nav-link.with-sub::after {
-  position: absolute;
-  font-size: 18px;
-  top: 6px;
-  right: 0;
+.am-sideleft-menu > .nav-item > .nav-link > span{
+  padding-left: 10px;
 }
+.am-sideleft-menu > .nav-item > .nav-link.hide{
+  display:none;
+}
+.am-sideleft-menu > .nav-item > .nav-link.with-sub::after {
+  content: "+";
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 300;
+  position: absolute;
+  right:0;
+}
+
 .am-sideleft-menu > .nav-item > .nav-link.show-sub::after {
-  content: '\f462';
+  content: '-';
 }
 .am-sideleft-menu > .nav-item > .nav-link i:first-child {
   margin-right: 8px;

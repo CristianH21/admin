@@ -1,9 +1,9 @@
 <?php
+  session_start();
+  if(isset($_SESSION['id'])){
   require 'header.php';
   require 'sidebar.php';
 ?>
-
-
     <div class="am-mainpanel">
       <div class="am-pagetitle">
         <h5 class="am-title">Service</h5>
@@ -94,4 +94,7 @@
 
 <?php 
   require 'footer.php';
+  } else {
+    header("Location: signin.php");
+  }
 ?>

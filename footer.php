@@ -17,6 +17,7 @@
     <script src="lib/Flot/jquery.flot.pie.js"></script>
     <script src="lib/Flot/jquery.flot.resize.js"></script>
     <script src="lib/flot-spline/jquery.flot.spline.js"></script>
+    <script src="lib/font-awesome/js/all.js"></script>
 
     <script src="js/amanda.js"></script>
     <script src="js/ResizeSensor.js"></script>

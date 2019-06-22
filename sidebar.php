@@ -1,17 +1,17 @@
 <div class="am-sideleft">
     <ul class="nav am-sideleft-tab">
         <li class="nav-item">
-            <a href="#mainMenu" class="nav-link active"><i class="icon ion-ios-home-outline tx-24"></i></a>
+            <a href="#mainMenu" class="nav-link active"><i class="fas fa-home fa-lg"></i></a>
         </li>
         <!--<li class="nav-item">
             <a href="#emailMenu" class="nav-link"><i class="icon ion-ios-email-outline tx-24"></i></a>
         </li>-->
-        <li class="nav-item">
-            <a href="#chatMenu" class="nav-link"><i class="icon ion-ios-chatboxes-outline tx-24"></i></a>
+        <!--<li class="nav-item">
+            <a href="#chatMenu" class="nav-link"><i class="fas fa-comments fa-lg"></i></i></a>
         </li>
         <li class="nav-item">
-            <a href="#settingMenu" class="nav-link"><i class="icon ion-ios-gear-outline tx-24"></i></a>
-        </li>
+            <a href="#settingMenu" class="nav-link"><i class="fas fa-cog fa-lg"></i></a>
+        </li>-->
     </ul>
 
     <div class="tab-content">
@@ -19,50 +19,29 @@
             <ul class="nav am-sideleft-menu">
                 <li class="nav-item">
                     <a href="index.php" class="nav-link active">
-                    <i class="icon ion-ios-home"></i>
+                    <i class="fas fa-home fa-lg"></i>
                     <span>Dashboard</span>
                     </a>
                 </li><!-- nav-item -->
                 <li class="nav-item">
-                    <a href="header-edit.php" class="nav-link">
-                    <i class="icon ion-document"></i>
-                    <span>Header</span>
+                    <a href="" class="nav-link with-sub">
+                        <i class="fas fa-folder fa-lg"></i>
+                        <span>Web Files</span>
                     </a>
+                    <ul class="nav-sub">
+                        <li class="nav-item"><a href="header-edit.php" class="nav-link">Header</a></li>
+                        <li class="nav-item"><a href="banner.php" class="nav-link">Banner</a></li>
+                        <li class="nav-item"><a href="service.php" class="nav-link">Service</a></li>
+                        <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="portfolio.php" class="nav-link">Portfolio</a></li>
+                        <li class="nav-item"><a href="header-edit.php" class="nav-link">Testimonial</a></li>
+                        <li class="nav-item"><a href="header-edit.php" class="nav-link">Footer</a></li>
+                    </ul>
                 </li><!-- nav-item -->
                 <li class="nav-item">
-                    <a href="banner.php" class="nav-link">
-                    <i class="icon ion-images"></i>
-                    <span>Banner</span>
-                    </a>
-                </li><!-- nav-item -->
-                <li class="nav-item">
-                    <a href="service.php" class="nav-link">
-                    <i class="icon ion-ios-browsers"></i>
-                    <span>Service</span>
-                    </a>
-                </li><!-- nav-item -->
-                <li class="nav-item">
-                    <a href="about.php" class="nav-link">
-                    <i class="icon ion-ios-person"></i>
-                    <span>About</span>
-                    </a>
-                </li><!-- nav-item -->
-                <li class="nav-item">
-                    <a href="portfolio.php" class="nav-link">
-                    <i class="icon ion-image"></i>
-                    <span>Portfolio</span>
-                    </a>
-                </li><!-- nav-item -->
-                <li class="nav-item">
-                    <a href="portfolio.php" class="nav-link">
-                    <i class="icon ion-ios-people"></i>
-                    <span>Testimonial</span>
-                    </a>
-                </li><!-- nav-item -->
-                <li class="nav-item">
-                    <a href="header-edit.php" class="nav-link">
-                    <i class="icon ion-document"></i>
-                    <span>Footer</span>
+                    <a href="header-edit.php" class="nav-link hide">
+                    <i class="fas fa-chart-pie fa-lg"></i> 
+                    <span>Analytics</span>
                     </a>
                 </li><!-- nav-item -->
             </ul><!-- am-sideleft-menu -->

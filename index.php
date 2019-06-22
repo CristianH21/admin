@@ -1,4 +1,6 @@
 <?php
+  session_start();
+  if(isset($_SESSION['id'])){
   require 'header.php';
   require 'sidebar.php';
 ?>
@@ -220,4 +222,7 @@
     </div><!-- am-mainpanel -->
 <?php 
   require 'footer.php';
+  } else {
+    header("Location: signin.php");
+  }
 ?>
