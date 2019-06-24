@@ -26,10 +26,12 @@
                             } else if($_GET['error'] == 'sqlerror'){
                                 echo '<div class="alert alert-danger" role="alert">Error, favor de intentar de nuevo.</div>';
                             } else if($_GET['error'] == 'wrongpwd'){
-                                echo '<div class="alert alert-danger" role="alert">Contraseña incorrecta.</div>';
+                                echo '<div class="alert alert-danger" role="alert">Incorrect Password.</div>';
                             } else if($_GET['error'] == 'nouser'){
                                 echo '<div class="alert alert-danger" role="alert">Usuario no existe.</div>';
-                            } else if($_GET['msj'] == 'success'){
+                            }
+                        } else if(isset($_GET['msj'])){
+                            if($_GET['msj'] == 'success'){
                                 echo '<div class="alert alert-success" role="alert">Changes successful.</div>';
                             }
                         }
@@ -45,6 +47,7 @@
                     <div class="form-group">
                         <label class="form-control-label">Email:</label>
                         <input type="email" name="email" class="form-control" value="<?php echo $_SESSION['email'];?>" disabled>
+                        <span><i>Email cannot be changed.</i></span>
                     </div><!-- form-group -->
 
                     <div class="form-group">
@@ -57,7 +60,7 @@
                         <input type="password" name="newPwd" class="form-control" placeholder="Enter your new password">
                     </div><!-- form-group -->
 
-                    <button type="submit" name="submit-profile" class="btn btn-block">Save Changes</button>
+                    <button type="submit" name="submit-profile" class="btn btn-block btn-primary">Save Changes</button>
                 </form>
             </div><!-- card -->
       </div><!-- am-pagebody -->

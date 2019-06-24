@@ -1,6 +1,6 @@
     <div class="am-footer">
-        <span>Copyright &copy;. All Rights Reserved. Amanda Responsive Bootstrap 4 Admin Dashboard.</span>
-        <span>Created by: ThemePixels, Inc.</span>
+        <span>Copyright &copy;. All Rights Reserved. eHomeMedia.</span>
+        <span>Powered by: eHomeMedia Software.</span>
     </div><!-- am-footer -->
 
 
