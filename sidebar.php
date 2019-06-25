@@ -39,9 +39,33 @@
                     </ul>
                 </li><!-- nav-item -->
                 <li class="nav-item">
-                    <a href="header-edit.php" class="nav-link hide">
+                    <a href="analytics.php" class="nav-link hide">
                     <i class="fas fa-chart-pie fa-lg"></i> 
                     <span>Analytics</span>
+                    </a>
+                </li><!-- nav-item -->
+                <li class="nav-item">
+                    <a href="customers.php" class="nav-link">
+                    <i class="fas fa-address-card fa-lg"></i> 
+                    <span>Customers</span>
+                    </a>
+                </li><!-- nav-item -->
+                <li class="nav-item">
+                    <a href="quote.php" class="nav-link">
+                    <i class="fas fa-inbox fa-lg"></i> 
+                    <span>Quote Request</span>
+                    </a>
+                </li><!-- nav-item -->
+                <li class="nav-item">
+                    <a href="users.php" class="nav-link">
+                    <i class="fas fa-users-cog fa-lg"></i> 
+                    <span>Users</span>
+                    </a>
+                </li><!-- nav-item -->
+                <li class="nav-item">
+                    <a href="users.php" class="nav-link">
+                    <i class="fas fa-cog fa-lg"></i> 
+                    <span>Settings</span>
                     </a>
                 </li><!-- nav-item -->
             </ul><!-- am-sideleft-menu -->

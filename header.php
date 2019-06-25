@@ -67,7 +67,6 @@
                 <div class="dropdown-menu wd-200">
                     <ul class="list-unstyled user-profile-nav">
                         <li><a href="profile.php"><i class="fas fa-user"></i> Edit Profile</a></li>
-                        <li><a href=""><i class="icon ion-ios-gear-outline"></i> Settings</a></li>
                         <li><a href=""><i class="icon ion-ios-folder-outline"></i> Log</a></li>
                         <li><a href="includes/logout.inc.php"><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a></li>
                     </ul>
