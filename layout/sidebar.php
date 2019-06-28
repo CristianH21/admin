@@ -18,7 +18,7 @@
         <div id="mainMenu" class="tab-pane active">
             <ul class="nav am-sideleft-menu">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link active">
+                    <a href="/www/admin/index.php" class="nav-link active">
                     <i class="fas fa-home fa-lg"></i>
                     <span>Dashboard</span>
                     </a>
@@ -31,7 +31,7 @@
                     <ul class="nav-sub">
                         <li class="nav-item"><a href="header-edit.php" class="nav-link">Header</a></li>
                         <li class="nav-item"><a href="banner.php" class="nav-link">Banner</a></li>
-                        <li class="nav-item"><a href="service.php" class="nav-link">Service</a></li>
+                        <li class="nav-item"><a href="/www/admin/services/catalog.php" class="nav-link">Service</a></li>
                         <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
                         <li class="nav-item"><a href="portfolio.php" class="nav-link">Portfolio</a></li>
                         <li class="nav-item"><a href="header-edit.php" class="nav-link">Testimonial</a></li>
@@ -45,7 +45,7 @@
                     </a>
                 </li><!-- nav-item -->
                 <li class="nav-item">
-                    <a href="customers.php" class="nav-link">
+                    <a href="customers/catalog.php" class="nav-link">
                     <i class="fas fa-address-card fa-lg"></i> 
                     <span>Customers</span>
                     </a>
@@ -57,7 +57,7 @@
                     </a>
                 </li><!-- nav-item -->
                 <li class="nav-item">
-                    <a href="users.php" class="nav-link">
+                    <a href="/www/admin/users/users.php" class="nav-link">
                     <i class="fas fa-users-cog fa-lg"></i> 
                     <span>Users</span>
                     </a>

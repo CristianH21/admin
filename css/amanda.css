@@ -3864,7 +3864,7 @@ tbody.collapse.show {
 .alert-danger {
   color: #721c24;
   background-color: #f8d7da;
-  border-color: #f5c6cb;
+  border-color: #6d000b;
 }
 .alert-danger hr {
   border-top-color: #f1b0b7;
@@ -8122,7 +8122,7 @@ a.text-dark:focus, a.text-dark:hover {
 .alert-success {
   color: #208637;
   background-color: #c4f1ce;
-  border-color: #28a745;
+  border-color: 1px solid #1e8536;
 }
 .alert-success hr {
   border-top-color: #23923d;
@@ -8158,7 +8158,7 @@ a.text-dark:focus, a.text-dark:hover {
 .alert-danger {
   color: #b51f2e;
   background-color: #f7d1d5;
-  border-color: #dc3545;
+  border-color: #9e2430;
 }
 .alert-danger hr {
   border-top-color: #d32535;

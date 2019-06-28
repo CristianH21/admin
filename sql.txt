@@ -11,5 +11,40 @@ CREATE TABLE users(
     enabled boolean,
     password_attempts int,
     system_log text,
+    id_roles_fk int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_roles_fk) REFERENCES roles(id)
+);
+
+CREATE TABLE roles(
+    id int AUTO_INCREMENT,
+    type varchar(200) NOT NULL,
+    description text NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE images(
+    id int AUTO_INCREMENT,
+    name blob,
+    date_registered date NOT NULL,
+    system_log text,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE services(
+    id int AUTO_INCREMENT,
+    title varchar(255) NOT NULL,
+    subtitle varchar(255) NOT NULL,
+    description text NOT NULL,
+    pros text NOT NULL,
+    cons text NOT NULL,
+    date_registered date NOT NULL,
+    enabled boolean,
+    system_log text,
+    id_user_fk int,
+    id_icon_fk int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_user_fk) REFERENCES users(id),
+    FOREIGN KEY (id_icon_fk) REFERENCES images(id)
+);
+
