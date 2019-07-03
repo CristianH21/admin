@@ -39,6 +39,7 @@
                      // output data of each row
                      while($row = mysqli_fetch_assoc($result)) {
                         echo '
+                        <input name="id" value="'.$row['id'].'" hidden/>
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="card pd-20 pd-sm-40">
@@ -100,13 +101,14 @@
                                     <br>
                                         <div class="card pd-20 pd-sm-40">
                                             <label class="ckbox">
-                                                <input type="checkbox" value="'.$row['enabled'].'">
+                                                <input type="checkbox" name="enabled" '.(($row["enabled"]==1)?"checked":"").'>
                                                 <span>Enabled</span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <br>
+                                        <button type="button" name="submit-service-delete" class="btn btn-block btn-light">Delete</button>
                                         <button type="submit" name="submit-service-update" class="btn btn-block btn-primary">Update</button>      
                                     </div>
                                 </div><!-- row -->

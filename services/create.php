@@ -10,7 +10,7 @@
       </div><!-- am-pagetitle -->
 
       <div class="am-pagebody">
-        <form action="../includes/service.inc.php" method="post">
+        <form action="../includes/service.inc.php" method="POST" enctype="multipart/form-data">
             <?php
                 if(isset($_GET['error'])){
 
@@ -71,7 +71,7 @@
                             <div class="card pd-20 pd-sm-40">
                                 <label>Icon: png, jpg</label>
                                 <label class="custom-file">
-                                    <input type="file" id="file" name="icon" class="custom-file-input">
+                                    <input type="file" name="icon" class="custom-file-input">
                                     <span class="custom-file-control"></span>
                                 </label>
                             </div>
@@ -82,7 +82,7 @@
                             <div class="card pd-20 pd-sm-40">
                                 <label>File: pdf</label>
                                 <label class="custom-file">
-                                    <input type="file" id="file" name="icon" class="custom-file-input">
+                                    <input type="file" name="file" class="custom-file-input">
                                     <span class="custom-file-control"></span>
                                 </label>
                             </div>
