@@ -21,7 +21,11 @@
                     } else if($_GET['error'] == 'wrongpwd'){
                         echo '<div class="alert alert-danger" role="alert">Incorrect Password.</div><br>';
                     } else if($_GET['error'] == 'nouser'){
-                        echo '<div class="alert alert-danger" role="alert">Usuario no existe.</div><br>';
+                        echo '<div class="alert alert-danger" role="alert">User invalid.</div><br>';
+                    } else if($_GET['error'] == 'ei'){
+                        echo '<div class="alert alert-danger" role="alert">Only PNG, JPG and JPEG icons are allowed.</div><br>';
+                    } else if($_GET['error'] == 'eis'){
+                        echo '<div class="alert alert-danger" role="alert">Icon size exceeds 2MB.</div><br>';
                     }
                 } else if(isset($_GET['msj'])){
                     if($_GET['msj'] == 'success'){
@@ -36,30 +40,30 @@
 
                         <div class="form-group">
                             <label class="form-control-label">Title: *</label>
-                            <input type="text" name="title" class="form-control">
+                            <input type="text" name="title" class="form-control" value="<?php echo (isset($_GET['t']))?$_GET['t']:''; ?>">
                         </div><!-- form-group -->
 
                         <div class="form-group">
                             <label class="form-control-label">Subtitle: *</label>
-                            <input type="text" name="subtitle" class="form-control">
+                            <input type="text" name="subtitle" class="form-control" value="<?php echo (isset($_GET['st']))?$_GET['st']:''; ?>">
                         </div><!-- form-group -->
 
                         <div class="form-group">
                             <label class="form-control-label">Description: *</label>
-                            <textarea class="form-control" name="description" rows="5" placeholder="Leave blank if no content"></textarea>
+                            <textarea class="form-control" name="description" rows="5" placeholder="Leave blank if no content"><?php echo (isset($_GET['d']))?$_GET['d']:''; ?></textarea>
                         </div><!-- form-group -->
 
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Pros:</label>
-                                    <textarea class="form-control" name="pros" rows="5" placeholder=""></textarea>
+                                    <textarea class="form-control" name="pros" rows="5" placeholder=""><?php echo (isset($_GET['c']))?$_GET['c']:''; ?></textarea>
                                 </div><!-- form-group -->
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Cons:</label>
-                                    <textarea class="form-control" name="cons" rows="5" placeholder=""></textarea>
+                                    <textarea class="form-control" name="cons" rows="5" placeholder=""><?php echo (isset($_GET['p']))?$_GET['p']:''; ?></textarea>
                                 </div><!-- form-group -->
                             </div>
                         </div>
