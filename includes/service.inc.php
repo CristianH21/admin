@@ -14,11 +14,13 @@
         $dateRegistered = date("Y-m-d h:i:sa");
         $enabled = true;
         $system_log = "User: ".$userName." created service on ".$dateRegistered." || ";
-        $system_log_icon = "User: ".$userName." uploaded image on ".$dateRegistered." || ";
+        $system_log_image = "User: ".$userName." uploaded image on ".$dateRegistered." || ";
         $icon = $_FILES['icon']['name'];
+        $banner = $_FILES['banner']['name'];
         $target = "../uploads/images/".basename($icon);
         $allowed_image_extension = array("png","jpg","jpeg");
         $icon_extension = pathinfo($_FILES["icon"]["name"], PATHINFO_EXTENSION);
+        $banner_extension = pathinfo($_FILES["banner"]["name"], PATHINFO_EXTENSION);
 
         if(empty($title) || empty($subtitle) || empty($description)){
             header("Location: ../services/create.php?error=emptyfields&t=$title&st=$subtitle&des=$description&cons=$cons&pros=$pros");
@@ -26,8 +28,14 @@
         } else if(file_exists($_FILES["icon"]["tmp_name"]) && ! in_array($icon_extension, $allowed_image_extension)){
             header("Location: ../services/create.php?error=ei&t=$title&st=$subtitle&d=$description&c=$cons&p=$pros");
             exit();
-        } else if(($_FILES["icon"]["size"] > 2000000)){
+        } else if(($_FILES["icon"]["size"] > 1000000)){
             header("Location: ../services/create.php?error=eis&t=$title&st=$subtitle&d=$description&c=$cons&p=$pros");
+            exit();
+        } else if(file_exists($_FILES["banner"]["tmp_name"]) && ! in_array($banner_extension, $allowed_image_extension)){
+            header("Location: ../services/create.php?error=eib&t=$title&st=$subtitle&d=$description&c=$cons&p=$pros");
+            exit();
+        } else if(($_FILES["banner"]["size"] > 5000000)){
+            header("Location: ../services/create.php?error=eisb&t=$title&st=$subtitle&d=$description&c=$cons&p=$pros");
             exit();
         } else {
             $sql = "SELECT * FROM users WHERE user_name=?;";
@@ -52,26 +60,43 @@
                         exit(); 
                     } else {
 
-                        mysqli_stmt_bind_param($stmt2, "sss",$icon,$dateRegistered,$system_log_icon);
+                        mysqli_stmt_bind_param($stmt2, "sss",$icon,$dateRegistered,$system_log_image);
                         mysqli_stmt_execute($stmt2);
 
                         $iconId = mysqli_insert_id($conn);
 
                         if (move_uploaded_file($_FILES["icon"]["tmp_name"], $target)) {
 
-                            $sql3 = "INSERT INTO services (title, subtitle, description, pros, cons, date_registered, enabled, system_log, id_users_fk, id_icon_fk) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                            $sql3 = "INSERT INTO images (name,date_registered,system_log) VALUES (?,?,?)";
                             $stmt3 = mysqli_stmt_init($conn);
-        
-                            if(!mysqli_stmt_prepare($stmt3, $sql3)){  
+
+                            if(!mysqli_stmt_prepare($stmt3, $sql3)){
                                 header("Location: ../services/create.php?error=sqlerror");
                                 exit(); 
                             } else {
-                                mysqli_stmt_bind_param($stmt3, "ssssssssss",$title,$subtitle,$description,$pros,$cons,$dateRegistered,$enabled,$system_log,$userId,$iconId);
+                                mysqli_stmt_bind_param($stmt3, "sss",$banner,$dateRegistered,$system_log_image);
                                 mysqli_stmt_execute($stmt3);
-                                header("Location: ../services/create.php?msj=success");
-                                exit(); 
-                            }
 
+                                $bannerId = mysqli_insert_id($conn);
+
+                                if (move_uploaded_file($_FILES["banner"]["tmp_name"], $target)) {
+                                    $sql4 = "INSERT INTO services (title, subtitle, description, pros, cons, date_registered, enabled, system_log, id_users_fk, id_icon_fk, id_banner_fk) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                                    $stmt4 = mysqli_stmt_init($conn);
+                
+                                    if(!mysqli_stmt_prepare($stmt4, $sql4)){  
+                                        header("Location: ../services/create.php?error=sqlerror");
+                                        exit(); 
+                                    } else {
+                                        mysqli_stmt_bind_param($stmt4, "sssssssssss",$title,$subtitle,$description,$pros,$cons,$dateRegistered,$enabled,$system_log,$userId,$iconId,$bannerId);
+                                        mysqli_stmt_execute($stmt4);
+                                        header("Location: ../services/create.php?msj=success");
+                                        exit(); 
+                                    }
+                                } else {
+                                    header("Location: ../services/create.php?error=img");
+                                    exit();
+                                }
+                            }
                         } else {
                             header("Location: ../services/create.php?error=img");
                             exit();

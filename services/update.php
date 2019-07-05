@@ -33,7 +33,7 @@
 
             <?php 
                 require '../includes/dbh.inc.php';
-                $sql = "SELECT services.id, services.title, services.subtitle, services.description, services.pros, services.cons, services.enabled FROM services WHERE services.id=".$_GET['srvc'];
+                $sql = "SELECT services.id, services.title, services.subtitle, services.description, services.pros, services.cons, icon.name AS icon, banner.name AS banner FROM services INNER JOIN images AS icon ON icon.id = services.id_icon_fk INNER JOIN images AS banner ON banner.id = services.id_banner_fk WHERE services.id= ".$_GET['srvc'];
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {
                      // output data of each row
@@ -56,7 +56,7 @@
             
                                     <div class="form-group">
                                         <label class="form-control-label">Description: *</label>
-                                        <textarea class="form-control" name="description" rows="5" placeholder="Leave blank if no content">'.$row['description'].'</textarea>
+                                        <textarea class="form-control" id="summernote" name="description" rows="5" placeholder="Leave blank if no content">'.$row['description'].'</textarea>
                                     </div><!-- form-group -->
             
                                     <div class="row">
@@ -79,10 +79,10 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card pd-20 pd-sm-40">
-                                            <label>Icon: png, jpg</label>
+                                            <label>Icon: png, jpg, jpeg</label>
                                             <label class="custom-file">
                                                 <input type="file" id="file" name="icon" class="custom-file-input">
-                                                <span class="custom-file-control"></span>
+                                                <span class="custom-file-control">'.$row['icon'].'</span>
                                             </label>
                                         </div>
                                     </div>
@@ -90,19 +90,10 @@
                                     <div class="col-lg-12">
                                     <br>
                                         <div class="card pd-20 pd-sm-40">
-                                            <label>File: pdf</label>
+                                            <label>Banner: png, jpg, jpeg</label>
                                             <label class="custom-file">
-                                                <input type="file" id="file" name="icon" class="custom-file-input">
-                                                <span class="custom-file-control"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                    <br>
-                                        <div class="card pd-20 pd-sm-40">
-                                            <label class="ckbox">
-                                                <input type="checkbox" name="enabled" '.(($row["enabled"]==1)?"checked":"").'>
-                                                <span>Enabled</span>
+                                                <input type="file" id="file" name="banner" class="custom-file-input">
+                                                <span class="custom-file-control">'.$row['banner'].'</span>
                                             </label>
                                         </div>
                                     </div>

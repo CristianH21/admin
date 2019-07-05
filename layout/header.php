@@ -20,6 +20,8 @@
     <link href="../lib/highlightjs/github.css" rel="stylesheet">
     <link href="../lib/datatables/jquery.dataTables.css" rel="stylesheet">
     <link href="../lib/select2/css/select2.min.css" rel="stylesheet">
+    <link href="../lib/summernote/summernote-bs4.css" rel="stylesheet">
+
 
     <!-- Amanda CSS -->
     <link rel="stylesheet" href="../css/amanda.css">

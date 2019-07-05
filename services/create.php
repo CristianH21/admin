@@ -33,37 +33,38 @@
                     }
                 }
             ?>
-            <input name="username" value="<?php echo $_SESSION['userName'];?>" hidden/>
+
+            <input id="username" name="username" value="<?php echo $_SESSION['userName'];?>" hidden/>
             <div class="row">
                 <div class="col-lg-8">
                     <div class="card pd-20 pd-sm-40">
 
                         <div class="form-group">
                             <label class="form-control-label">Title: *</label>
-                            <input type="text" name="title" class="form-control" value="<?php echo (isset($_GET['t']))?$_GET['t']:''; ?>">
+                            <input type="text" id="title" name="title" class="form-control" value="<?php echo (isset($_GET['t']))?$_GET['t']:''; ?>">
                         </div><!-- form-group -->
 
                         <div class="form-group">
                             <label class="form-control-label">Subtitle: *</label>
-                            <input type="text" name="subtitle" class="form-control" value="<?php echo (isset($_GET['st']))?$_GET['st']:''; ?>">
+                            <input type="text" id="subtitle" name="subtitle" class="form-control" value="<?php echo (isset($_GET['st']))?$_GET['st']:''; ?>">
                         </div><!-- form-group -->
 
                         <div class="form-group">
                             <label class="form-control-label">Description: *</label>
-                            <textarea class="form-control" name="description" rows="5" placeholder="Leave blank if no content"><?php echo (isset($_GET['d']))?$_GET['d']:''; ?></textarea>
-                        </div><!-- form-group -->
+                            <textarea class="form-control" id="summernote" name="description" rows="5" placeholder="Leave blank if no content"><?php echo (isset($_GET['d']))?$_GET['d']:''; ?></textarea>
+                        </div>
 
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Pros:</label>
-                                    <textarea class="form-control" name="pros" rows="5" placeholder=""><?php echo (isset($_GET['c']))?$_GET['c']:''; ?></textarea>
+                                    <textarea id="pros" class="form-control" name="pros" rows="5" placeholder=""><?php echo (isset($_GET['c']))?$_GET['c']:''; ?></textarea>
                                 </div><!-- form-group -->
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Cons:</label>
-                                    <textarea class="form-control" name="cons" rows="5" placeholder=""><?php echo (isset($_GET['p']))?$_GET['p']:''; ?></textarea>
+                                    <textarea id="cons" class="form-control" name="cons" rows="5" placeholder=""><?php echo (isset($_GET['p']))?$_GET['p']:''; ?></textarea>
                                 </div><!-- form-group -->
                             </div>
                         </div>
@@ -73,9 +74,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card pd-20 pd-sm-40">
-                                <label>Icon: png, jpg</label>
+                                <label>Icon: png, jpg, jpeg</label>
                                 <label class="custom-file">
-                                    <input type="file" name="icon" class="custom-file-input">
+                                    <input id="icon" type="file" name="icon" class="custom-file-input">
                                     <span class="custom-file-control"></span>
                                 </label>
                             </div>
@@ -84,9 +85,9 @@
                         <div class="col-lg-12">
                         <br>
                             <div class="card pd-20 pd-sm-40">
-                                <label>File: pdf</label>
+                                <label>Banner: png, jpg, jpeg</label>
                                 <label class="custom-file">
-                                    <input type="file" name="file" class="custom-file-input">
+                                    <input id="banner" type="file" name="banner" class="custom-file-input">
                                     <span class="custom-file-control"></span>
                                 </label>
                             </div>

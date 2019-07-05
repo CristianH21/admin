@@ -30,7 +30,7 @@
                             <?php 
                                 require '../includes/dbh.inc.php';
                                 $sql = "SELECT services.id, services.title, services.date_registered, users.user_name FROM services INNER JOIN users ON services.id_users_fk = users.id";
-                                //$sql = "SELECT services.id, services.title, services.date_registered, users.user_name FROM services INNER JOIN users ON users.id = services.id_users_fk ORDER BY services.id DESC";
+                                
                                 $result = mysqli_query($conn, $sql);
                                 if (mysqli_num_rows($result) > 0) {
                                      // output data of each row

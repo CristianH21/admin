@@ -45,12 +45,6 @@
                     </a>
                 </li><!-- nav-item -->
                 <li class="nav-item">
-                    <a href="customers/catalog.php" class="nav-link">
-                    <i class="fas fa-address-card fa-lg"></i> 
-                    <span>Customers</span>
-                    </a>
-                </li><!-- nav-item -->
-                <li class="nav-item">
                     <a href="quote.php" class="nav-link">
                     <i class="fas fa-inbox fa-lg"></i> 
                     <span>Quote Request</span>

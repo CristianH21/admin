@@ -22,6 +22,7 @@
     <script src="../lib/datatables/jquery.dataTables.js"></script>
     <script src="../lib/datatables-responsive/dataTables.responsive.js"></script>
     <script src="../lib/select2/js/select2.min.js"></script>
+    <script src="../lib/summernote/summernote-bs4.js"></script>
 
     <script src="../js/amanda.js"></script>
     <script src="../js/ResizeSensor.js"></script>
@@ -44,6 +45,14 @@
 
           // Select2
           $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+
+          $('#summernote').summernote({
+            height: 250,   //set editable area's height
+            codemirror: { // codemirror options
+              theme: 'monokai'
+            }
+          });
+
         });
      
     </script>
