@@ -53,6 +53,20 @@
             }
           });
 
+          document.querySelector("#icon").onchange = function(){
+            console.log("Icon changed");
+            let iconValue = this.value;
+            let iconText = iconValue.slice(12, iconValue.length);
+            this.nextElementSibling.innerHTML = iconText;
+          };
+
+          document.querySelector("#banner").onchange = function(){
+              console.log("Banner changed");
+              let iconValue = this.value;
+              let iconText = iconValue.slice(12, iconValue.length);
+              this.nextElementSibling.innerHTML = iconText;
+          };
+
         });
      
     </script>

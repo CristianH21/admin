@@ -10,7 +10,7 @@
       </div><!-- am-pagetitle -->
 
       <div class="am-pagebody">
-        <form action="../includes/service.inc.php" method="post">
+        <form action="../includes/service.inc.php" method="post" enctype="multipart/form-data">
             <?php
                 if(isset($_GET['error'])){
 
@@ -33,11 +33,16 @@
 
             <?php 
                 require '../includes/dbh.inc.php';
-                $sql = "SELECT services.id, services.title, services.subtitle, services.description, services.pros, services.cons, icon.name AS icon, banner.name AS banner FROM services INNER JOIN images AS icon ON icon.id = services.id_icon_fk INNER JOIN images AS banner ON banner.id = services.id_banner_fk WHERE services.id= ".$_GET['srvc'];
+                $sql = "SELECT services.id, services.title, services.subtitle, services.description, services.pros, services.cons, icon.name AS icon, banner.name AS banner FROM services INNER JOIN images AS icon ON icon.id = IFNULL(services.id_icon_fk,0) INNER JOIN images AS banner ON banner.id = IFNULL(services.id_banner_fk,0) WHERE services.id= ".$_GET['srvc'];
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {
                      // output data of each row
                      while($row = mysqli_fetch_assoc($result)) {
+                        $row['title'] = (isset($_GET['t']))?$_GET['t']:$row['title'];
+                        $row['subtitle'] = (isset($_GET['st']))?$_GET['st']:$row['subtitle'];
+                        $row['description'] = (isset($_GET['d']))?$_GET['d']:$row['description'];
+                        $row['pros'] = (isset($_GET['p']))?$_GET['p']:$row['pros'];
+                        $row['cons'] = (isset($_GET['c']))?$_GET['c']:$row['cons'];
                         echo '
                         <input name="id" value="'.$row['id'].'" hidden/>
                         <div class="row">
@@ -81,7 +86,7 @@
                                         <div class="card pd-20 pd-sm-40">
                                             <label>Icon: png, jpg, jpeg</label>
                                             <label class="custom-file">
-                                                <input type="file" id="file" name="icon" class="custom-file-input">
+                                                <input type="file" id="icon" name="icon" class="custom-file-input" value="'.$row['icon'].'">
                                                 <span class="custom-file-control">'.$row['icon'].'</span>
                                             </label>
                                         </div>
@@ -92,7 +97,7 @@
                                         <div class="card pd-20 pd-sm-40">
                                             <label>Banner: png, jpg, jpeg</label>
                                             <label class="custom-file">
-                                                <input type="file" id="file" name="banner" class="custom-file-input">
+                                                <input type="file" id="banner" name="banner" class="custom-file-input" value="'.$row['banner'].'">
                                                 <span class="custom-file-control">'.$row['banner'].'</span>
                                             </label>
                                         </div>

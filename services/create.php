@@ -26,6 +26,10 @@
                         echo '<div class="alert alert-danger" role="alert">Only PNG, JPG and JPEG icons are allowed.</div><br>';
                     } else if($_GET['error'] == 'eis'){
                         echo '<div class="alert alert-danger" role="alert">Icon size exceeds 2MB.</div><br>';
+                    } else if($_GET['error'] == 'imgicon'){
+                        echo '<div class="alert alert-danger" role="alert">Icon did not upload, try again.</div><br>';
+                    } else if($_GET['error'] == 'imgbanner'){
+                        echo '<div class="alert alert-danger" role="alert">Banner did not upload, try again.</div><br>';
                     }
                 } else if(isset($_GET['msj'])){
                     if($_GET['msj'] == 'success'){
@@ -102,7 +106,7 @@
         </form>
       </div><!-- am-pagebody -->
     </div><!-- am-mainpanel -->
-
+    
 <?php 
   require '../layout/footer.php';
   } else {
