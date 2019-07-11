@@ -55,7 +55,7 @@
 
                         <div class="form-group">
                             <label class="form-control-label">Description: *</label>
-                            <textarea class="form-control" id="summernote" name="description" rows="5" placeholder="Leave blank if no content"><?php echo (isset($_GET['d']))?$_GET['d']:''; ?></textarea>
+                            <textarea class="form-control" id="summernote" name="description" rows="5" placeholder="Inserta a description about this service..."><?php echo (isset($_GET['d']))?$_GET['d']:''; ?></textarea>
                         </div>
 
                         <div class="row">

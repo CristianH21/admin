@@ -51,17 +51,17 @@
             
                                     <div class="form-group">
                                         <label class="form-control-label">Title: *</label>
-                                        <input type="text" name="title" class="form-control" value="'.$row['title'].'">
+                                        <input type="text" name="title" class="form-control" placeholder="Title is required." value="'.$row['title'].'">
                                     </div><!-- form-group -->
             
                                     <div class="form-group">
                                         <label class="form-control-label">Subtitle: *</label>
-                                        <input type="text" name="subtitle" class="form-control" value="'.$row['subtitle'].'">
+                                        <input type="text" name="subtitle" class="form-control" placeholder="Subtitle is required." value="'.$row['subtitle'].'">
                                     </div><!-- form-group -->
             
                                     <div class="form-group">
                                         <label class="form-control-label">Description: *</label>
-                                        <textarea class="form-control" id="summernote" name="description" rows="5" placeholder="Leave blank if no content">'.$row['description'].'</textarea>
+                                        <textarea class="form-control" id="summernote" name="description" rows="5" placeholder="A description is required.">'.$row['description'].'</textarea>
                                     </div><!-- form-group -->
             
                                     <div class="row">
@@ -104,7 +104,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <br>
-                                        <button type="button" name="submit-service-delete" class="btn btn-block btn-light">Delete</button>
+                                        <button type="submit" name="submit-service-delete" class="btn btn-block btn-light">Delete</button>
                                         <button type="submit" name="submit-service-update" class="btn btn-block btn-primary">Update</button>      
                                     </div>
                                 </div><!-- row -->

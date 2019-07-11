@@ -40,6 +40,7 @@ CREATE TABLE services(
     cons text NOT NULL,
     date_registered date NOT NULL,
     enabled boolean,
+    deleted_logical boolean,
     system_log text,
     id_users_fk int,
     id_icon_fk int,

@@ -11,6 +11,15 @@
 
       <div class="am-pagebody">
             <div class="card pd-20 pd-sm-40">
+                <?php 
+                    if(isset($_GET['msj'])){
+                        if($_GET['msj'] == 'deleted'){
+                            echo '<div class="alert alert-success" role="alert">Service deleted.</div><br>';
+                        } else if($_GET['msj'] == 'service'){
+                            echo '<div class="alert alert-success" role="alert">Service created.</div><br>';
+                        }
+                    }
+                ?>
                 <div class="row">
                     <div class="col-lg-12">
                         <a href="create.php" class="btn btn-primary float-right">Add Service</a>
@@ -29,7 +38,7 @@
                         <tbody>
                             <?php 
                                 require '../includes/dbh.inc.php';
-                                $sql = "SELECT services.id, services.title, services.date_registered, users.user_name FROM services INNER JOIN users ON services.id_users_fk = users.id";
+                                $sql = "SELECT services.id, services.title, services.date_registered, users.user_name FROM services INNER JOIN users ON services.id_users_fk = users.id WHERE services.deleted_logical = false";
                                 
                                 $result = mysqli_query($conn, $sql);
                                 if (mysqli_num_rows($result) > 0) {
